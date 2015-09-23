@@ -1,4 +1,5 @@
 {
+  "name": "<%= appName %>",
   "private": true,
   "devDependencies": {
     "autoprefixer": "^6.0.3",

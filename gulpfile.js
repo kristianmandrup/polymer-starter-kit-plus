@@ -199,8 +199,10 @@ gulp.task('clean', function (cb) {
   return del(['.tmp', 'dist', 'deploy'], cb);
 });
 
+gulp.task('styling', ['styl', 'styles']);
+
 // Watch files for changes & reload
-gulp.task('serve', ['images', 'js', 'lint', 'styles'], function () {
+gulp.task('serve', ['images', 'js', 'lint', 'styling'], function () {
   browserSync({
     browser: config.browserSync.browser,
     https: config.browserSync.https,
@@ -228,7 +230,7 @@ gulp.task('serve', ['images', 'js', 'lint', 'styles'], function () {
   });
 
   gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/{elements,themes}/**/*.{css,html}'], ['styles', reload]);
+  gulp.watch(['app/{elements,themes}/**/*.{styl,css,html}'], ['styling', reload]);
   gulp.watch(['app/{scripts,elements}/**/*.{js,html}'], ['jshint', 'js']);
   gulp.watch(['app/images/**/*'], reload);
 });
@@ -282,13 +284,15 @@ gulp.task('revision', require(task('revision'))($, gulp));
 // Build and serve the output from the dist build with GAE tool
 gulp.task('serve:gae', ['default'], require(task('serve-gae'))($, gulp));
 
+gulp.task('styl', require(task('stylus'))($, config, gulp));
+
 // Transform styles with PostCSS
 gulp.task('styles', require(task('styles'))($, config, gulp, merge));
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
   runSequence(
-    ['copy', 'styles', 'lint', 'js'],
+    ['copy', 'styling', 'lint', 'js'],
     ['jshint', 'images', 'fonts', 'html'],
     'vulcanize',
     ['clean-dist', 'minify-dist'],
