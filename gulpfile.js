@@ -57,6 +57,23 @@ gulp.task('images', function () {
     .pipe($.size({title: 'Copy optimized images to dist/images dir:'}));
 });
 
+var linkImports = require('gulp-link-imports');
+gulp.task('import:external', function () {
+  gulp.src('./app/elements/imports/external/**/*.yml')
+    // .pipe(printFile())
+    .pipe(linkImports({external: true}))
+    .pipe(fs.createWriteStream('./app/elements/include/external-imports.html'));
+});
+
+gulp.task('import:app', function () {
+  gulp.src('./app/elements/imports/app/**/*.yml')
+    // .pipe(printFile())
+    .pipe(linkImports({app: true}))
+    .pipe(fs.createWriteStream('./app/elements/include/app-imports.html'));
+});
+
+gulp.task('imports', ['import:external', 'import:app']);
+
 // Copy all files at the root level (app)
 gulp.task('copy', function () {
   var app = gulp.src([
@@ -202,7 +219,7 @@ gulp.task('clean', function (cb) {
 gulp.task('styling', ['styl', 'styles']);
 
 // Watch files for changes & reload
-gulp.task('serve', ['images', 'js', 'lint', 'styling'], function () {
+gulp.task('serve', ['imports', 'images', 'js', 'lint', 'styling'], function () {
   browserSync({
     browser: config.browserSync.browser,
     https: config.browserSync.https,
@@ -293,7 +310,7 @@ gulp.task('styles', require(task('styles'))($, config, gulp, merge));
 gulp.task('default', ['clean'], function (cb) {
   runSequence(
     ['copy', 'styling', 'lint', 'js'],
-    ['jshint', 'images', 'fonts', 'html'],
+    ['jshint', 'imports', 'images', 'fonts', 'html'],
     'vulcanize',
     ['clean-dist', 'minify-dist'],
     'cache-config',

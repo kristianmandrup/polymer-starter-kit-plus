@@ -50,6 +50,7 @@ module.exports = function ($, config, gulp, merge) { return function () {
 
   var elements = gulp.src([
       'app/elements/**/*.html',
+      '!app/elements/include',
       '!app/elements/elements.html',
       '!app/elements/routing.html'
     ])
