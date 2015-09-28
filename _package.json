@@ -63,6 +63,15 @@
     <% if (useGWC) { %>
     "google-web-components": "GoogleWebComponents/google-web-components#1.0.x",
     <% } %>
+    <% if (useReact) { %>
+    "reactive-elements": "PixelsCommander/ReactiveElements",
+    <% } %>
+    <% if (useBackbone) { %>
+    "backbone-elements": "MVC-Elements/BackboneElements",
+    <% } %>
+    <% if (useAngular) { %>
+    "angular-elements": "MVC-Elements/AngularElements",
+    <% } %>
     <% if (useAnalytics) { %>
     "google-analytics": "cesarwbr/google-analytics-element",
     <% } %>
