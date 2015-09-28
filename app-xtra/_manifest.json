@@ -1,6 +1,6 @@
 {
-  "name": "Polymer Starter Kit Plus",
-  "short_name": "Polymer Starter Kit Plus",
+  "name": "<%= appName %>",
+  "short_name": "<%= appName %>",
   "icons": [{
         "src": "images/touch/icon-128x128.png",
         "sizes": "128x128",

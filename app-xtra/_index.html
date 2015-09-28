@@ -16,7 +16,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Polymer Starter Kit Plus">
-  <title>Polymer Starter Kit Plus</title>
+  <title><%= appName %></title>
   <!-- Place favicon.ico in the `app/` directory -->
   <link rel="shortcut icon" href="favicon.ico">
 
@@ -49,6 +49,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
+
+  <script src="bower_components/rx/dist/rx.lite.min.js"></script>
+  <script src="bower_components/rx-dom/index.js"></script>
 
   <!-- will be replaced with elements/elements.vulcanized.html -->
   <link rel="import" href="elements/elements.html">
@@ -127,25 +130,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             </paper-material>
             <paper-material class="Page-paper" elevation="1">
               <p class="paper-font-body2">This is another card.</p>
-            </paper-material>
-
-            <paper-material class="Page-paper" elevation="1">
-              <h2 id="license">License</h2>
-              <p>Everything in this repo is BSD style license unless otherwise specified.</p>
-              <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-              <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-              <ul>
-              <li>Redistributions of source code must retain the above copyright
-              notice, this list of conditions and the following disclaimer.</li>
-              <li>Redistributions in binary form must reproduce the above
-              copyright notice, this list of conditions and the following disclaimer
-              in the documentation and/or other materials provided with the
-              distribution.</li>
-              <li>Neither the name of Google Inc. nor the names of its
-              contributors may be used to endorse or promote products derived from
-              this software without specific prior written permission.</li>
-              </ul>
-              <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
             </paper-material>
           </section>
 

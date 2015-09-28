@@ -9,7 +9,9 @@
     "neon-elements": "PolymerElements/neon-elements#1.0.x",
     "start-elements": "StartPolymer/start-elements#1.1.x",
     "font-roboto": "StartPolymer/font-empty#1.1.x",
-    "page": "visionmedia/page.js#1.6.x"
+    "page": "visionmedia/page.js#1.6.x",
+    "rx-dom": "Reactive-Extensions/rxjs-dom#6.x.x",
+    "rx": "Reactive-Extensions/RxJS#3.x.x"
   },
   "devDependencies": {
     "web-component-tester": "*",
