@@ -50,13 +50,37 @@
     "vulcanize": ">= 1.4.2",
     "web-component-tester": "^3.1.3"
   },
+  "napa" : {
+    "polymer" : "polymer/polymer#^1.1.0",
+    "web-component-tester": "Polymer/web-component-tester#~3.1.7",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
+    "iron-elements": "PolymerElements/iron-elements#1.0.x",
+    "paper-elements": "PolymerElements/paper-elements#1.0.x",
+    "platinum-elements": "PolymerElements/platinum-elements#1.1.x",
+    "neon-elements": "PolymerElements/neon-elements#1.0.x",
+    <% if (useGWC) { %>
+    "google-web-components": "GoogleWebComponents/google-web-components#1.0.x",
+    <% } %>
+    <% if (useAnalytics) { %>
+    "google-analytics": "cesarwbr/google-analytics-element",
+    <% } %>
+    "paper-styles": "PolymerElements/paper-styles",
+    "page": "visionmedia/page.js#1.6.x",
+    <% if (useFirebase) { %>
+    "firebase-document": "GoogleWebComponents/firebase-document",
+    "firebase-auth": "GoogleWebComponents/firebase-auth",
+    <% } %>
+    "rx-dom": "Reactive-Extensions/rxjs-dom#6.x.x",
+    "rx": "Reactive-Extensions/RxJS#3.x.x"
+  },
   "scripts": {
+    "postinstall" : "napa",
     "install-all": "sudo npm install -g npm && sudo npm install -g bower gulp && npm install && bower install",
     "start": "gulp serve",
     "test": "gulp test:local",
     "update-all": "npm update && bower update"
   },
   "engines": {
-    "node": ">=0.12.0"
+    "node": ">= 4.0.0"
   }
 }
