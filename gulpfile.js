@@ -59,14 +59,14 @@ gulp.task('images', function () {
 
 var linkImports = require('gulp-link-imports');
 gulp.task('import:external', function () {
-  gulp.src('./app/elements/imports/external/**/*.yml')
+  gulp.src('./app/elements/_imports/external/**/*.yml')
     // .pipe(printFile())
     .pipe(linkImports({external: true}))
     .pipe(fs.createWriteStream('./app/elements/external-imports.html'));
 });
 
 gulp.task('import:app', function () {
-  gulp.src('./app/elements/imports/app/**/*.yml')
+  gulp.src('./app/elements/_imports/app/**/*.yml')
     // .pipe(printFile())
     .pipe(linkImports({app: true}))
     .pipe(fs.createWriteStream('./app/elements/app-imports.html'));
