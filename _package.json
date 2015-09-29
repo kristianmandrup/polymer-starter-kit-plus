@@ -20,6 +20,7 @@
     "gulp-if": "^1.2.1",
     "gulp-imagemin": "^2.2.1",
     "gulp-jshint": "^1.6.3",
+    "gulp-link-imports": "^0.0.1",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-html": "^1.0.2",
     "gulp-plumber": "^1.0.1",
@@ -81,17 +82,17 @@
     "firebase-document": "GoogleWebComponents/firebase-document",
     "firebase-auth": "GoogleWebComponents/firebase-auth",
     <% } %>
-    "rx-dom": "Reactive-Extensions/rxjs-dom#6.x.x",
-    "rx": "Reactive-Extensions/RxJS#3.x.x"
+    "rx-dom": "Reactive-Extensions/RxJS-DOM",
+    "rx": "Reactive-Extensions/RxJS"
   },
   "scripts": {
-    "postinstall" : "napa",
-    "install-all": "sudo npm install -g npm && sudo npm install -g bower gulp && npm install && bower install",
+    "install" : "napa",
+    "install-all": "sudo npm install -g npm && sudo npm install -g bower gulp napa && npm install && bower install",
     "start": "gulp serve",
     "test": "gulp test:local",
     "update-all": "npm update && bower update"
   },
   "engines": {
-    "node": ">= 4.0.0"
+    "node": ">= 4.1.1"
   }
 }
